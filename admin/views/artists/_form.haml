@@ -1,0 +1,34 @@
+.group
+  =f.label :musicBrainzID
+  =f.error_message_on :musicBrainzID
+  =f.text_field :musicBrainzID, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :name
+  =f.error_message_on :name
+  =f.text_field :name, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :country
+  =f.error_message_on :country
+  =f.text_field :country, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :dateBorn
+  =f.error_message_on :dateBorn
+  =f.text_field :dateBorn, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :dateDied
+  =f.error_message_on :dateDied
+  =f.text_field :dateDied, :class => :text_field
+  %span.description Ex: a simple text
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:artists, :index)}';return false", :class => :button

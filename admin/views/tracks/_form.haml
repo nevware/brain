@@ -1,0 +1,22 @@
+.group
+  =f.label :title
+  =f.error_message_on :title
+  =f.text_field :title, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :duration
+  =f.error_message_on :duration
+  =f.text_field :duration, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :bitrate
+  =f.error_message_on :bitrate
+  =f.text_field :bitrate, :class => :text_field
+  %span.description Ex: a simple text
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:tracks, :index)}';return false", :class => :button

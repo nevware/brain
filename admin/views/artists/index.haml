@@ -1,0 +1,39 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:artists, :index)
+      %li=link_to pat(:new), url(:artists, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:artists)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:artist, :id)
+          %th=mat(:artist, :musicBrainzID)
+          %th=mat(:artist, :name)
+          %th=mat(:artist, :country)
+          %th=mat(:artist, :dateBorn)
+          %th=mat(:artist, :dateDied)
+          %th=mat(:artist, :created_at)
+          %th=mat(:artist, :updated_at)
+          %th.last="&nbsp;"
+        -@artists.each do |artist|
+          %tr
+            %td.first=artist.id
+            %td=artist.musicBrainzID
+            %td=artist.name
+            %td=artist.country
+            %td=artist.dateBorn
+            %td=artist.dateDied
+            %td=artist.created_at
+            %td=artist.updated_at
+            %td.last
+              =button_to pat(:edit), url(:artists, :edit, :id => artist.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:artists, :destroy, :id => artist.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
